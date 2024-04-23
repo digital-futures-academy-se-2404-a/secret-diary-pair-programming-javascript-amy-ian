@@ -6,7 +6,7 @@
 
 ## Problem Statement
 
-DFCorp is a company that makes a secret diary.  The diary has a lock and can only be accessed by entering the correct pin number.  When the user enters the correct pin number, the diary is unlocked and can be used - i.e. all entries can be viewed and new entries can be made.  When they enter the incorrect pin number, the diary stays locked and they cannot access it.  The diary should also be able to be locked.  DFCorp would like you to create a console application that simulates this behaviour as a prototype for an electronic version of the diary.
+DFCorp is a company that makes a secret diary.  The diary has a lock and can only be accessed by entering the correct pin.  When the user enters the correct pin, the diary is unlocked and can be used - i.e. all entries can be viewed and new entries can be made.  When they enter the incorrect pin, the diary stays locked and they cannot access it.  The diary should also be able to be locked.  DFCorp would like you to create a console application that simulates this behaviour as a prototype for an electronic version of the diary.
 
 ---
 
