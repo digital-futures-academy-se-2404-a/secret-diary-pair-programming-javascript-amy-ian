@@ -10,6 +10,28 @@ describe("Secret Diary Class Tests:", () => {
             //Assert
             expect(testDiary).toBeInstanceOf(Diary);
         });
-       
-   })
+
+    })
+    
+    describe("Diary Setter Tests:", () => { 
+        //before and after test set ups
+        let testDiary;
+        beforeEach(() => {
+            testDiary = new Diary();             
+        });
+
+        afterEach(() => {
+            testDiary = undefined;            
+        })
+
+        //Tests   
+        it("adding an entry to Diary and increases the length of entries", () => { 
+            //Arrange            
+            const expected = (testDiary.readDiary().length + 1);
+            //Act
+            testDiary.writeDiary("Hello World");
+            //Assert
+            expect(testDiary.readDiary().length).toBe(expected);
+        })
+    })
 })
