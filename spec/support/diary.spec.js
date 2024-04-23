@@ -44,6 +44,28 @@ describe("Secret Diary Class Tests:", () => {
         })
 
     })
+    
+    describe("Diary Getter Tests:", () => {
+        let testDiary;
+
+        beforeEach(() => {
+            testDiary = new Diary();             
+        });
+
+        afterEach(() => {
+            testDiary = undefined;            
+        })
+
+        it("should return the diary entries when readEntries is called", () => {
+            //Arrange
+            testDiary.writeDiary("I feel like we should say: ")
+            testDiary.writeDiary("Hello World");
+            const expected = ["I feel like we should say: ", "Hello World"];
+            //Act
+            //Assert
+            expect(testDiary.readDiary()).toEqual(expected);
+        });
+    })
 })
 
 
