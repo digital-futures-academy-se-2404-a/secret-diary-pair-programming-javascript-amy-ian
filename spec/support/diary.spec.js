@@ -33,5 +33,29 @@ describe("Secret Diary Class Tests:", () => {
             //Assert
             expect(testDiary.readDiary().length).toBe(expected);
         })
+
+        it("adding an invalid entry to the Diary doesn't increases the length of entries", () => { 
+            //Arrange            
+            const expected = testDiary.readDiary().length;
+            //Act
+            testDiary.writeDiary();
+            //Assert
+            expect(testDiary.readDiary().length).toBe(expected);
+        })
+
     })
 })
+
+
+/*
+    //Tests   
+        it("desc", () => { 
+            //Arrange            
+            
+            //Act
+            
+            //Assert
+            
+        })
+
+*/
