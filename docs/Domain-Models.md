@@ -46,8 +46,9 @@ The following are the user stories, domain models and tests for the Diary class.
 
 ### Tests
 
-- [ ] getLockedStatus should return 'true' when the diary is locked
-- [ ] getLockedStatus should return 'false' when the diary is unlocked
+- [x] getLockedStatus should return 'false' when the diary is unlocked
+- [x] getLockedStatus should return 'true' when the diary is locked
+
 
 ## User Story 4
 
@@ -64,6 +65,7 @@ The following are the user stories, domain models and tests for the Diary class.
 - [ ] entering the correct pin will unlock the diary
 - [ ] entering the incorrect pin will not unlock the diary
 - [ ] entering an erroneous value is handled correctly
+- [ ] getLockedStatus should return 'false' when the diary is locked and then unlocked
 
 ## User Story 5
 

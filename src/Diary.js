@@ -1,6 +1,7 @@
 export default class Diary { 
     #entries = [];
     #lockStatus = false;
+    #password = 1234;
     
     writeDiary(newEntry) {
         if (!(typeof newEntry === 'string')) return; 
@@ -13,6 +14,10 @@ export default class Diary {
 
     lock() { 
         this.#lockStatus = true;
+    }
+
+    unlock(pin) {
+        if (pin === this.#password) { this.#lockStatus = false; }        
     }
 
     getLockStatus() {

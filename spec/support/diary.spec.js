@@ -93,6 +93,16 @@ describe("Secret Diary Class Tests:", () => {
             //Assert
             expect(testDiary.getLockStatus()).toBe(true);
         })
+        
+        it("should unlock the diary when the the correct PIN is entered", () => {
+            //Arrange
+            const pw = 1234;
+            testDiary.lock();
+            //Act
+            testDiary.unlock(pw);
+            //Assert
+            expect(testDiary.getLockStatus()).toBe(false);
+        })
     })
 
 })
