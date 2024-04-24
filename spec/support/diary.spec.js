@@ -65,19 +65,39 @@ describe("Secret Diary Class Tests:", () => {
             //Assert
             expect(testDiary.readDiary()).toEqual(expected);
         });
+        
+    })
+    
+    describe("Diary Getter Tests:", () => {
+        let testDiary;
+
+        beforeEach(() => {
+            testDiary = new Diary();             
+        });
+
+        afterEach(() => {
+            testDiary = undefined;            
+        })
+
+        it("should return true when the diary getLockStatus is locked", () => { 
+            //Arrange        
+            //Act
+            //Assert
+            expect(testDiary.getLockStatus()).toBe(true);            
+        })
     })
 })
 
 
 /*
-    //Tests   
-        it("desc", () => { 
-            //Arrange            
-            
-            //Act
-            
-            //Assert
-            
-        })
+//Tests   
+    it("desc", () => { 
+        //Arrange            
+        
+        //Act
+        
+        //Assert
+        
+    })
 
 */

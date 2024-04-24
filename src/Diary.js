@@ -10,4 +10,8 @@ export default class Diary {
         return this.#entries;
     }
 
+    getLockStatus() {
+        return true;
+    }
+
 }
