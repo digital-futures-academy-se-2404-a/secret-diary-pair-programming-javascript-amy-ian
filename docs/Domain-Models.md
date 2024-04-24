@@ -109,8 +109,8 @@ The following are the user stories, domain models and tests for the Diary class.
 
 ### Tests
 
-- [ ] writeDiary doesn't add to the diaries entries
-- [ ] writeDiary will add to the entries if the diary is unlocked
+- [x] writeDiary doesn't add to the diaries entries
+- [x] writeDiary will add to the entries if the diary is unlocked
 
 ---
 ## Interface code
