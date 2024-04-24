@@ -112,6 +112,26 @@ describe("Secret Diary Class Tests:", () => {
           //Assert
           expect(testDiary.getLockStatus()).toBe(true);
         });
+
+        it("should not unlock the diary when erroneous data is entered", () => {
+          //Arrange
+          
+          testDiary.lock();
+          //Act
+          testDiary.unlock("cat");
+          //Assert
+          expect(testDiary.getLockStatus()).toBe(true);
+        });
+
+        it("should not unlock the diary when null data is entered", () => {
+          //Arrange
+
+          testDiary.lock();
+          //Act
+          testDiary.unlock();
+          //Assert
+          expect(testDiary.getLockStatus()).toBe(true);
+        });
     })
 
     describe("Diary Locked Readability Tests:", () => { 
@@ -132,6 +152,50 @@ describe("Secret Diary Class Tests:", () => {
             //Act
             //Assert
             expect(testDiary.readDiary()[0]).not.toBe("This should not be seen");
+        });
+        
+        it("should be readable when the diary is unlocked", () => {
+            //Arrange
+            testDiary.writeDiary("This is my diary")
+            testDiary.writeDiary("Today was a great day")
+            testDiary.lock();
+            testDiary.unlock(1234);
+            //Act
+            testDiary.readDiary();
+            //Assert
+            expect(testDiary.readDiary()).toEqual(["This is my diary", "Today was a great day"]);
+        });
+    })
+
+    describe("Diary Locked Writeability Tests:", () => { 
+        let testDiary;
+
+        beforeEach(() => {
+            testDiary = new Diary();
+        });
+
+        afterEach(() => {
+            testDiary = undefined;
+        });
+        
+        it("should not accept entries when the diary is locked", () => { 
+            //Arrange   
+            testDiary.lock();
+            //Act
+            testDiary.writeDiary("Another mundane day");
+            testDiary.unlock(1234);
+            //Assert
+            expect(testDiary.readDiary().length).toBe(0);
+        })
+
+        it("should accept entries when the diary is unlocked", () => {
+            //Arrange            
+            testDiary.lock();
+            testDiary.unlock(1234);            
+            //Act
+            testDiary.writeDiary("Another mundane day");            
+            //Assert
+            expect(testDiary.readDiary().length).toBe(1);
         });
     })
 })

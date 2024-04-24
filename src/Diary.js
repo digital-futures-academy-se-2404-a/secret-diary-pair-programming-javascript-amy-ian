@@ -4,6 +4,7 @@ export default class Diary {
     #password = 1234;
     
     writeDiary(newEntry) {
+        if (this.#lockStatus) return;
         if (!(typeof newEntry === 'string')) return; 
         this.#entries.push(newEntry);        
     }
