@@ -68,7 +68,7 @@ describe("Secret Diary Class Tests:", () => {
         
     })
     
-    describe("Diary Getter Tests:", () => {
+    describe("Diary Lock Status Tests:", () => {
         let testDiary;
 
         beforeEach(() => {
@@ -79,13 +79,22 @@ describe("Secret Diary Class Tests:", () => {
             testDiary = undefined;            
         })
 
-        it("should return true when the diary getLockStatus is locked", () => { 
+        it("should return false when the diary getLockStatus is unlocked", () => { 
             //Arrange        
             //Act
             //Assert
-            expect(testDiary.getLockStatus()).toBe(true);            
+            expect(testDiary.getLockStatus()).toBe(false);            
+        })
+
+        it("should lock the diary when the lock function is called", () => {
+            //Arrange
+            //Act
+            testDiary.lock();
+            //Assert
+            expect(testDiary.getLockStatus()).toBe(true);
         })
     })
+
 })
 
 

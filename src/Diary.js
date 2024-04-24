@@ -1,5 +1,6 @@
 export default class Diary { 
     #entries = [];
+    #lockStatus = false;
     
     writeDiary(newEntry) {
         if (!(typeof newEntry === 'string')) return; 
@@ -10,8 +11,12 @@ export default class Diary {
         return this.#entries;
     }
 
+    lock() { 
+        this.#lockStatus = true;
+    }
+
     getLockStatus() {
-        return true;
+        return this.#lockStatus;
     }
 
 }
