@@ -1,8 +1,10 @@
 # Secret Diary Pair-Programming Project - Domain Models and test plan
 
+## Diary Code
+
+The following are the user stories, domain models and tests for the Diary class.
+
 ## User Story 1
-
-
 
 ![User Story 1: As a user I want to be able to read the diary entries, so I can read what I had previously recorded.](UserCase1.png)
 
@@ -106,3 +108,46 @@
 
 - [ ] writeDiary doesn't add to the diaries entries
 - [ ] writeDiary will add to the entries if the diary is unlocked
+
+---
+## Interface code
+The following are the user stories, domain models and tests for the
+
+## User Story 8
+As a user I want to be able to access the features of my diary through a menu, so I can choose what i want to do with it
+
+### Domain Model
+| Objects    | Properties     | Messages    | Output  |
+| ---------- | -------------- | ----------- | ------- |
+
+### Tests
+
+- [ ] interface displays option choices
+- [ ] interface loops until exit is chosen
+- [ ] choosing to read the diary option opens the read method
+- [ ] choosing the write to diary option open the write method
+
+## User Story 9
+as a user I want to know if my diary is locked or not on the interface, so I know if I need to unlock it or lock it.
+
+### Domain Model
+| Objects    | Properties     | Messages    | Output  |
+| ---------- | -------------- | ----------- | ------- |
+| secretDiary| - #lockStatus @boolean | getLockStatus() | @void |
+
+### Tests
+
+- [ ] interface displays diaries lock status
+- [ ] changing the lock status updates the interface
+
+## User Story 10
+As a user I want my diary to display my entries if I request them, so I can read what i wrote previously
+
+### Domain Model
+| Objects    | Properties     | Messages    | Output  |
+| ---------- | -------------- | ----------- | ------- |
+| secretDiary| - #lockStatus @boolean | - writeDiary() | @void |
+
+### Tests
+
+- [ ] interface displays diaries lock status
