@@ -9,6 +9,7 @@ export default class Diary {
     }
     
     readDiary() {
+        if (this.#lockStatus) return "Diary Locked";
         return this.#entries;
     }
 
@@ -17,7 +18,7 @@ export default class Diary {
     }
 
     unlock(pin) {
-        if (pin === this.#password) { this.#lockStatus = false; }        
+        if (pin === this.#password) this.#lockStatus = false;       
     }
 
     getLockStatus() {

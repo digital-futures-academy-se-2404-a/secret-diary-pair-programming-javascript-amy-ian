@@ -64,8 +64,7 @@ describe("Secret Diary Class Tests:", () => {
             //Act
             //Assert
             expect(testDiary.readDiary()).toEqual(expected);
-        });
-        
+        });        
     })
     
     describe("Diary Lock Status Tests:", () => {
@@ -94,7 +93,7 @@ describe("Secret Diary Class Tests:", () => {
             expect(testDiary.getLockStatus()).toBe(true);
         })
         
-        it("should unlock the diary when the the correct PIN is entered", () => {
+        it("should unlock the diary when the correct PIN is entered", () => {
             //Arrange
             const pw = 1234;
             testDiary.lock();
@@ -103,8 +102,38 @@ describe("Secret Diary Class Tests:", () => {
             //Assert
             expect(testDiary.getLockStatus()).toBe(false);
         })
+
+        it("should not unlock the diary when the incorrect PIN is entered", () => {
+          //Arrange
+          const pw = 123488;
+          testDiary.lock();
+          //Act
+          testDiary.unlock(pw);
+          //Assert
+          expect(testDiary.getLockStatus()).toBe(true);
+        });
     })
 
+    describe("Diary Locked Readability Tests:", () => { 
+        let testDiary;
+
+        beforeEach(() => {
+            testDiary = new Diary();
+        });
+
+        afterEach(() => {
+            testDiary = undefined;
+        });
+        
+        it("should not be readable when the diary is locked", () => {
+            //Arrange
+            testDiary.writeDiary("This should not be seen")
+            testDiary.lock();
+            //Act
+            //Assert
+            expect(testDiary.readDiary()[0]).not.toBe("This should not be seen");
+        });
+    })
 })
 
 
